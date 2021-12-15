@@ -1,9 +1,9 @@
-## A very specific use case
+## A very specific use case...
 
 Has this happened to you?
-* You have to transcribe a large amount of data by hand
+* You have to address hundreds of enevelopes by hand
 * That data is available in a CSV
-* That data needs to get formatted as an envelope address
+* That CSV happens to be in an exact format
 * You need dark mode
 
 If so, then you landed on the right spot!
@@ -15,6 +15,14 @@ In seriousness, this is a small utility created for [Alachua Conservation Trust]
 You can just visit the GitHub pages of this repo to access the utility: https://lucasgrinspan.github.io/lettersss/index.html. Or you can clone the repo and open `index.html` in your browser. On the landing page, you'll be asked to upload a CSV. The file that gets uploaded doesn't go to any servers. I don't even have a server.
 
 Once the CSV gets uploaded, the site will parse the file, presenting and formatting each CSV line one at a time. Press the space bar or the right arrow key to move to the next entry. Press the left arrow key to move back an entry.
+
+## CSV
+
+The site expects the CSV file to be in this format.
+```csv
+first and last name, street address, city, state, zip code
+```
+Apartment unit designators don't need to be in their own column. The street address gets parsed for those designators and is automatically presented in a new line.
 
 ## Images
 
