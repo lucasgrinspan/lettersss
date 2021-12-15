@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letters</title>
+    <link rel="stylesheet" href="./styles/vars.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/file-input.css" />
+  </head>
+  <body>
+    <header>
+      <button>Toggle Theme</button>
+    </header>
+    <main>
+      <form>
+        <p>
+          Hey there! Find your CSV file to load the entries. The file doesn't get sent to a server.
+          I don't even have a server!
+        </p>
+        <input type="file" accept=".csv" id="csv-file" />
+        <label for="csv-file" tabindex="-1">Select CSV file</label>
+      </form>
+    </main>
+    <template id="entry-container">
+      <div id="entry">
+        <span id="entry-number"></span>
+        <div>
+          <p class="entry-line" id="name"></p>
+          <p class="entry-line" id="address-line-1"></p>
+          <p class="entry-line" id="address-line-2"></p>
+          <p class="entry-line" id="address-line-3"></p>
+        </div>
+      </div>
+    </template>
+    <script src="./scripts/csv.js"></script>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>

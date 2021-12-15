@@ -1,0 +1,13 @@
+html[data-theme="light"] {
+  --primary: salmon;
+  --primary-hover: lightsalmon;
+  --text: black;
+  --background: oldlace;
+}
+
+html[data-theme="dark"] {
+  --primary: rebeccapurple;
+  --primary-hover: darkmagenta;
+  --text: white;
+  --background: black;
+}

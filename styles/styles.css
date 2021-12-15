@@ -1,0 +1,85 @@
+html,
+body {
+  height: 100vh;
+  font-family: sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* take remaining space */
+  flex: 1 1 auto;
+}
+
+form {
+  max-width: 60ch;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  /* sized to content */
+  flex: 0 1 auto;
+}
+
+header button {
+  display: block;
+  background-color: transparent;
+  border: 1px solid var(--text);
+  color: var(--text);
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 200ms ease-out;
+}
+header button:hover {
+  background-color: var(--text);
+  color: var(--background);
+}
+header button:active {
+  transform: scale(0.97);
+}
+header button:focus {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+/* entry styles */
+div#entry {
+  display: flex;
+  gap: 2rem;
+  min-width: 65rem;
+}
+.entry-line {
+  font-weight: bold;
+  font-size: 5rem;
+  margin: 0;
+  margin-bottom: 5px;
+}
+span {
+  font-size: 2rem;
+}

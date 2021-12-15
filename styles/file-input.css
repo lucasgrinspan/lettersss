@@ -1,0 +1,40 @@
+input[type="file"] {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+
+/* some cool button styles */
+input[type="file"] + label {
+  display: block;
+  position: relative;
+  padding: 0 20px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+input[type="file"]:hover + label,
+input[type="file"]:focus + label {
+  background-color: var(--primary-hover);
+  color: var(--text);
+}
+
+input[type="file"]:active + label {
+  transform: scale(0.97);
+}
+
+/* Adding an outline to the label on focus */
+input[type="file"]:focus + label,
+label:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
