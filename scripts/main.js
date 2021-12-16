@@ -17,8 +17,17 @@ const formatAddress = ({ street, city, state, zip }) => {
   const secondLineMatch = /(?=unit|apt|ste|rm|dept|fl|bldg)/gi;
   const [line1, line2] = street.split(secondLineMatch, 2);
 
-  console.log(line2);
   return [line1, line2, `${city}, ${state} ${zip}`];
+};
+
+// launches confetti and shows a nice message
+const showCompletionMessage = () => {
+  nameNode.innerHTML = `You did it! ${data.length} entries completed! 🥂🎉`;
+  addressNode.innerHTML = "";
+  addressLine2Node.innerHTML = "";
+  addressLine3Node.innerHTML = "";
+  numberNode.innerHTML = "";
+  launchConfettiFireworks();
 };
 
 // prints an entry to the screen
@@ -64,7 +73,7 @@ document.querySelector('input[type="file"]').addEventListener("change", (event) 
   const reader = new FileReader();
   reader.readAsText(uploadedFile, "UTF-8");
   reader.onload = (e) => {
-    data = CSVToArray(e.target.result);
+    data = CSVToArray(e.target.result).slice(1, 5);
     prepareEntryArea();
     printEntry(0);
   };
@@ -84,14 +93,24 @@ document.addEventListener("keydown", (evt) => {
     case "Space":
     case "ArrowRight":
       index += 1;
-      printEntry(index);
       break;
     case "ArrowLeft":
       index -= 1;
-      printEntry(index);
     default:
       break;
   }
+
+  if (index < 0) {
+    index = 0;
+  }
+  if (index >= data.length) {
+    showCompletionMessage();
+    // ensures that the user can go back
+    index = data.length;
+    return;
+  }
+
+  printEntry(index);
 });
 
 // toggle theme button
