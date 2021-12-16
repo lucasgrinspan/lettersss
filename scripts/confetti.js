@@ -637,24 +637,27 @@
   window.confetti = module.exports;
 })(window, {});
 
+let interval;
 const launchConfettiFireworks = () => {
   confetti.reset();
-  var duration = 4000;
-  var animationEnd = Date.now() + duration;
-  var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+  clearInterval(interval);
+
+  const duration = 4000;
+  const animationEnd = Date.now() + duration;
+  const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
   function randomInRange(min, max) {
     return Math.random() * (max - min) + min;
   }
 
-  var interval = setInterval(function () {
-    var timeLeft = animationEnd - Date.now();
+  interval = setInterval(function () {
+    const timeLeft = animationEnd - Date.now();
 
     if (timeLeft <= 0) {
       return clearInterval(interval);
     }
 
-    var particleCount = 100 * (timeLeft / duration);
+    const particleCount = 100 * (timeLeft / duration);
     // since particles fall down, start a bit higher than random
     confetti(
       Object.assign({}, defaults, {
