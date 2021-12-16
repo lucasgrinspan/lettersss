@@ -73,7 +73,7 @@ document.querySelector('input[type="file"]').addEventListener("change", (event) 
   const reader = new FileReader();
   reader.readAsText(uploadedFile, "UTF-8");
   reader.onload = (e) => {
-    data = CSVToArray(e.target.result).slice(1, 5);
+    data = CSVToArray(e.target.result);
     prepareEntryArea();
     printEntry(0);
   };
