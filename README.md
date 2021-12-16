@@ -26,9 +26,9 @@ Apartment unit designators don't need to be in their own column. The street addr
 
 ## Images
 
-![Upload screen](https://user-images.githubusercontent.com/32201603/146122328-9c5ec48c-9bfd-478e-9abb-bbc3b569ed8d.png)
-![entry screen in light mode](https://user-images.githubusercontent.com/32201603/146122620-24ef4ea7-54bf-4737-843b-ae2fd85d114c.png)
-![entry screen in dark mode](https://user-images.githubusercontent.com/32201603/146122631-4b016f78-ae34-455f-9668-04426348af3d.png)
+![landing screen](https://user-images.githubusercontent.com/32201603/146450371-16207f5d-2884-4c62-8c0c-85590aa6113f.png)
+![the utility in action, showing an entry](https://user-images.githubusercontent.com/32201603/146450412-6cddb2e4-5fc1-45a2-9b7b-0b3af55db822.png)
+![the utility in action, showing an entry in dark mode](https://user-images.githubusercontent.com/32201603/146450455-f38889ab-6da6-420b-b23d-a9382152478a.png)
 ![a picture of the utility in action](https://user-images.githubusercontent.com/32201603/146124932-008baebb-250b-4fa0-b8e6-74a164ab79ab.jpg)
 
 This project exclusively uses CSS keyword colors!
