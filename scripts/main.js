@@ -112,9 +112,12 @@ window.addEventListener("keydown", (evt) => {
   switch (evt.code) {
     case "Space":
     case "ArrowRight":
+    case "KeyL":
       index += 1;
       break;
     case "ArrowLeft":
+    case "Backspace":
+    case "KeyH":
       index -= 1;
     default:
       break;
