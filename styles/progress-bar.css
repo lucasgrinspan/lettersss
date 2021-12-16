@@ -1,0 +1,23 @@
+progress {
+  border-radius: 7px;
+  width: 10rem;
+  height: 15px;
+  background-color: transparent;
+  border: 1px solid var(--text);
+  overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+  border-radius: 7px;
+  background-color: transparent;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--progress-primary);
+  border-radius: 7px;
+}
+
+progress::-moz-progress-bar {
+  background-color: var(--progress-primary);
+  border-radius: 7px;
+}

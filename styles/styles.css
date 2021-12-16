@@ -39,7 +39,7 @@ p {
 header {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 20px;
   /* sized to content */
   flex: 0 1 auto;

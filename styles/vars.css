@@ -3,6 +3,7 @@ html[data-theme="light"] {
   --primary-hover: lightsalmon;
   --text: black;
   --background: oldlace;
+  --progress-primary: var(--primary);
 }
 
 html[data-theme="dark"] {
@@ -10,4 +11,5 @@ html[data-theme="dark"] {
   --primary-hover: darkmagenta;
   --text: white;
   --background: black;
+  --progress-primary: blueviolet;
 }

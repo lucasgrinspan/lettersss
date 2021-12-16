@@ -8,6 +8,7 @@ let nameNode;
 let addressNode;
 let addressLine2Node;
 let addressLine3Node;
+const progressBar = document.querySelector("header progress");
 
 // address line 1
 // address line 2
@@ -30,6 +31,13 @@ const showCompletionMessage = () => {
   launchConfettiFireworks();
 };
 
+const updateProgressBar = (entryIndex) => {
+  // calculate the percentage
+  const progress = 100 * ((entryIndex + 1) / data.length);
+  progressBar.setAttribute("value", progress);
+  progressBar.innerHTML = `${progress}%`;
+};
+
 // prints an entry to the screen
 const printEntry = (entryIndex) => {
   const entry = data[entryIndex];
@@ -44,6 +52,8 @@ const printEntry = (entryIndex) => {
   addressNode.innerHTML = addressLine1;
   addressLine2Node.innerHTML = addressLine2 || "";
   addressLine3Node.innerHTML = addressCityLine;
+
+  updateProgressBar(entryIndex);
 };
 
 // puts the template content in main and removes the file reader
@@ -65,6 +75,9 @@ const prepareEntryArea = () => {
   addressNode = document.querySelector("#address-line-1");
   addressLine2Node = document.querySelector("#address-line-2");
   addressLine3Node = document.querySelector("#address-line-3");
+
+  // show the progress bar
+  progressBar.removeAttribute("hidden");
 };
 
 // handles file upload
