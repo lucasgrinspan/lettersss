@@ -83,9 +83,29 @@ document.querySelector('input[type="file"]').addEventListener("change", (event) 
   };
 });
 
+// toggle theme button
+document.querySelector("header button").addEventListener("click", (e) => {
+  const htmlNode = document.querySelector("html");
+  const currentTheme = htmlNode.getAttribute("data-theme");
+
+  let targetTheme = "dark";
+  if (currentTheme === "dark") {
+    targetTheme = "light";
+  }
+
+  htmlNode.setAttribute("data-theme", targetTheme);
+});
+
 // handles keyboard shortcuts
-document.addEventListener("keydown", (evt) => {
+window.addEventListener("keydown", (evt) => {
   if (!data) {
+    return;
+  }
+
+  // Should not get triggered by a space bar keypress on a button
+  const focusedNode = document.activeElement.nodeName;
+  const isSpaceKey = evt.code === "Space";
+  if (focusedNode === "BUTTON" && isSpaceKey) {
     return;
   }
 
@@ -111,17 +131,4 @@ document.addEventListener("keydown", (evt) => {
   }
 
   printEntry(index);
-});
-
-// toggle theme button
-document.querySelector("header button").addEventListener("click", () => {
-  const htmlNode = document.querySelector("html");
-  const currentTheme = htmlNode.getAttribute("data-theme");
-
-  let targetTheme = "dark";
-  if (currentTheme === "dark") {
-    targetTheme = "light";
-  }
-
-  htmlNode.setAttribute("data-theme", targetTheme);
 });
